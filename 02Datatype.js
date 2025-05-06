@@ -21,5 +21,6 @@ let isLoggedin = true;
 // null => it is an standalonge value
 // symbol => unique
 
+// array , object
 console.log(typeof undefined); //undefind
 console.log(typeof null); //object
