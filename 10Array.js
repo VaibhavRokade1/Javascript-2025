@@ -24,6 +24,21 @@ const Arr = new Array(1, 2, 3, 4, 5);
 
 let Arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+// console.log("Array Arr1 : \n", Arr1);
+// console.log("Array slice : \n", Arr1.slice(2, 5)); // 2nd elements last value is not include
+// console.log("Array Arr1 : \n", Arr1);
+
 console.log("Array Arr1 : \n", Arr1);
-console.log("Array slice : \n", Arr1.slice(2, 5)); // 2nd elements last value is not include
+console.log("Array splice : \n", Arr1.splice(2, 5)); // 2nd elements last value is include but splice can return sub array of the actual array
 console.log("Array Arr1 : \n", Arr1);
+
+//   output
+// Array Arr1 :
+//  [
+//   1, 2, 3, 4,  5,
+//   6, 7, 8, 9, 10
+// ]
+// Array splice :
+//  [ 3, 4, 5, 6, 7 ]
+// Array Arr1 :
+//  [ 1, 2, 8, 9, 10 ]
