@@ -1,10 +1,10 @@
 // Scope ( Local Scope  , Golable Scope)
 
-if (true) {
-  let a = 10;
-  const b = 20;
-  var c = 30;
-}
+// if (true) {
+//   let a = 10;
+//   const b = 20;
+//   var c = 30;
+// }
 
 // Printing State
 // console.log(a);
