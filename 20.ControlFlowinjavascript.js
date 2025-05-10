@@ -15,8 +15,8 @@ if (2 === "2") {
 //  < , > , <= , >= , == , === ,!= ( Comparison Operator )
 
 const score = 200;
-if (score >= 100) {
-  const power = "fly";
-}
+// if (score >= 100) {
+//   const power = "fly";
+// }
 
-console.log(`Your Power is  : ${power}`);
+// console.log(`Your Power is  : ${power}`);
