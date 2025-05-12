@@ -164,4 +164,20 @@
 //   console.log(element);
 // }
 
-for (let i = 1; i <= 10; i++) {}
+// Break Keyword in javascript
+
+// for (let i = 1; i <= 10; i++) {
+//   if (i == 5) {
+//     console.log(`Value is detected : 5`);
+//     break;
+//   }
+//   console.log(i);
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   if (i == 5) {
+//     console.log(`Value is detected : 5`);
+// continue
+//   }
+//   console.log(i);
+// }
