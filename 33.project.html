@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Switcher</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .button {
+        position: relative;
+        height: 100px !important;
+        margin: 10px;
+        border-radius: 15px;
+
+        border: 2px solid black;
+        width: 100px !important;
+      }
+
+      #yellow {
+        background-color: yellow;
+      }
+      #red {
+        background-color: red;
+      }
+      #Blue {
+        background-color: blue;
+      }
+      #green {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="button" id="yellow">.</span>
+    <span class="button" id="Blue">.</span>
+    <span class="button" id="green">.</span>
+    <span class="button" id="red">.</span>
+  </body>
+  <script>
+    const buttons = document.querySelectorAll(".button");
+    const body = document.querySelector("body");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (e.target.id == "red") {
+          body.style.backgroundColor = "red";
+        }
+        if (e.target.id == "yellow") {
+          body.style.backgroundColor = "yellow";
+        }
+        if (e.target.id == "green") {
+          body.style.backgroundColor = "green";
+        }
+        if (e.target.id == "Blue") {
+          body.style.backgroundColor = "blue";
+        }
+      });
+    });
+  </script>
+</html>
