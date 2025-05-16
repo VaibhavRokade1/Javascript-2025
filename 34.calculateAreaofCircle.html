@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form">
+        <h1>Circile Area Calculater</h1>
+        <label for="radius"> Enter a Redius of Circile : </label><br />
+        <input type="number" id="radius" placeholder="Ex. 6700.87" />
+        <input type="submit" value="Calculate" />
+        <div>
+          <h3>Area of Circile is: <span id="Area"></span></h3>
+        </div>
+      </form>
+    </div>
+  </body> 
+  <script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const radius = parseInt(document.getElementById("radius").value);
+      const result = 3.14 * (radius * radius);
+
+      document.getElementById("Area").innerText = `${result}`;
+    });
+  </script>
+</html>
