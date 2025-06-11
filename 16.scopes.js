@@ -43,3 +43,17 @@ const mytest = function () {
 };
 
 // mytest();
+
+// console.log("Hello World");
+
+// ==================== Lexical scope ===========================
+
+function one() {
+  var num = 50;
+  function two() {
+    console.log(num);
+    function three() {
+      console.log(num);
+    }
+  }
+}

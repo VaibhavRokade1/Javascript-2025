@@ -32,7 +32,7 @@ const Users = [
 ];
 
 function productTotal() {
-  return Users[0].productPrice + Users[0].productPrice;
+  return Users[0].productPrice + Users[1].productPrice;
 }
 
 console.log(productTotal());

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=" />
+    <title>DOM Task</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        background: #db5dd5;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+      }
+      .box {
+        height: 80vh;
+        width: 30%;
+        padding: 2rem;
+        display: flex;
+        /* color: #db5dd5; */
+        gap: 2rem;
+        border-radius: 0.4rem;
+        flex-direction: column;
+        background: #ffffff;
+      }
+      .box1 input,
+      button {
+        height: 40px;
+        padding: 0.5rem;
+        font-size: larger;
+      }
+      .box1 button {
+        border-radius: 2rem;
+        color: #ffffff;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: #db5dd5;
+      }
+      .heading {
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid #db5dd5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">
+        <h1 class="heading">Registration From</h1>
+        <input type="text" placeholder="Enter a Name" />
+        <input type="email" placeholder="Enter a Email" />
+        <input type="date" />
+        <button onclick="sendData()">Submit</button>
+      </div>
+      <div class="box box2">
+        <h1 class="heading">User Data</h1>
+        <h3>Name :</h3>
+        <h3>Email :</h3>
+        <h3>DOB :</h3>
+      </div>
+    </div>
+
+    <script>
+      const sendData = () => {
+        let name = document.getElementsByTagName("input")[0];
+        let email = document.getElementsByTagName("input")[1];
+        let dob = document.getElementsByTagName("input")[2];
+
+        if (!name.value || !email.value || !dob.value) {
+          alert("All fileds is required");
+        } else {
+          document.getElementsByTagName("h3")[0].innerText += name.value;
+          document.getElementsByTagName("h3")[1].innerText += email.value;
+          document.getElementsByTagName("h3")[2].innerText += dob.value;
+
+          name.value = "";
+          email.value = "";
+          dob.value = "";
+        }
+      };
+    </script>
+  </body>
+</html>
