@@ -42,3 +42,14 @@ console.log("Array Arr1 : \n", Arr1);
 //  [ 3, 4, 5, 6, 7 ]
 // Array Arr1 :
 //  [ 1, 2, 8, 9, 10 ]
+
+// let arrr = [12, 3545, 56, 65, 5];
+
+// console.log(arrr[0]);
+// console.log(arrr[1]);
+// console.log(arrr[2]);
+// console.log(arrr[3]);
+// console.log(arrr[4]);
+// console.log(arrr[5]); // it will be the return----------> undefind
+
+let arrr = [12, 3545, 56, 65, 5];
