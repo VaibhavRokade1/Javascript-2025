@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+      .btn {
+        padding: 0.5rem;
+        width: 100px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <select onchange="setImage(value)" class="btn">
+          <option
+            value="https://imgs.search.brave.com/6rmboaVQQ8L5OwvbTt1o2kXNXQc1ceFJLbayYwf_8Vs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzgv/MDE1LzMyNy9zbWFs/bC9haS1nZW5lcmF0/ZWQtbGlvbi1oaWdo/LXF1YWxpdHktaW1h/Z2UtZnJlZS1waG90/by5qcGc"
+          >
+            Lion
+          </option>
+          <option
+            value="https://imgs.search.brave.com/6rmboaVQQ8L5OwvbTt1o2kXNXQc1ceFJLbayYwf_8Vs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzgv/MDE1LzMyNy9zbWFs/bC9haS1nZW5lcmF0/ZWQtbGlvbi1oaWdo/LXF1YWxpdHktaW1h/Z2UtZnJlZS1waG90/by5qcGc"
+          >
+            Cat
+          </option>
+          <option
+            value="https://imgs.search.brave.com/1q3DztTeG841xrhijy8PFV5ExJp5zuJT4QACTLgKlCI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODcx/NjQ4NDkwL3Bob3Rv/L3RpZ2VyLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1WYlEt/QnhocW5KZEhoV09H/SkN2QVpPbXNCNUto/QmpuLUxlSUZFdUNI/Sk1jPQ"
+          >
+            Tiger
+          </option>
+          <option
+            value="https://imgs.search.brave.com/xF3QXTh5uVsNvX19itSsDaxS_fxnmgmOhGR_mUTg0ig/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDc2/MDg2NTc3L3Bob3Rv/L21hY2FxdWUtbW9u/a2V5LXNtaWxpbmct/aW4tYmFsaS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9bnJh/ay1LVkliOUFmRENY/a2VNRHc2OHQtNXBI/MXZXSnZtS1hLd0Mw/QnJocz0"
+          ></option>
+        </select>
+      </div>
+      <button class="btn" onclick="setBgColor(innerText)">Red</button>
+      <button class="btn" onclick="setBgColor(innerText)">Green</button>
+      <button class="btn" onclick="setBgColor(innerText)">Blue</button>
+      <button class="btn" onclick="setBgColor(innerText)">Yellow</button>
+      <button class="btn" onclick="setBgColor(innerText)">Gray</button>
+      <button class="btn" onclick="setBgColor(innerText)">Orange</button>
+      <img src="" alt="" height="200px" width="200px" />
+    </div>
+    <script>
+      const setImage = (imgUrl) => {
+        document.getElementsByTagName("img")[0].src = imgUrl;
+      };
+
+      const setBgColor = (colorName) => {
+        document.getElementsByTagName("body")[0].style.background = colorName;
+      };
+    </script>
+  </body>
+</html>

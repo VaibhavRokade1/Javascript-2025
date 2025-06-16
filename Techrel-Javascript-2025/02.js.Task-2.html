@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID Card Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .card-form {
+        max-width: 500px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .modal-body img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ID Card Generator</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <form class="card-form">
+        <h3 class="text-center mb-4">Enter Your Details</h3>
+
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" placeholder="Your name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Profile Image URL</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="https://example.com/image.jpg"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-select">
+            <option selected disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea
+            class="form-control"
+            rows="3"
+            placeholder="Your address"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Pin Code</label>
+          <input type="number" class="form-control" placeholder="123456" />
+        </div>
+
+        <div class="d-grid">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#idCardModal"
+            onclick="generateCard()"
+          >
+            Generate ID Card
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      class="modal fade"
+      id="idCardModal"
+      tabindex="-1"
+      aria-labelledby="idCardModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="idCardModalLabel">Your ID Card</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="profilePic" src="" alt="Profile" />
+            <p><strong>Name:</strong> <span id="outputName"></span></p>
+            <p><strong>Gender:</strong> <span id="outputGender"></span></p>
+            <p><strong>Address:</strong> <span id="outputAddress"></span></p>
+            <p><strong>Pin Code:</strong> <span id="outputPin"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="window.print()"
+            >
+              Print
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function generateCard() {
+        const inputs = document.getElementsByTagName("input");
+        const select = document.querySelector("select");
+        const textarea = document.querySelector("textarea");
+
+        document.getElementById("outputName").innerText = inputs[0].value;
+        document.getElementById("profilePic").src = inputs[1].value;
+        document.getElementById("outputGender").innerText = select.value;
+        document.getElementById("outputAddress").innerText = textarea.value;
+        document.getElementById("outputPin").innerText = inputs[2].value;
+      }
+    </script>
+  </body>
+</html>
