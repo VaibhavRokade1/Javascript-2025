@@ -141,6 +141,7 @@
       </div>
     </div>
     <script>
+      let count = 0;
       // create btn logic
       const GenrateBtn = () => {
         let colorName = document.getElementsByTagName("input")[0].value;
@@ -159,11 +160,13 @@
       };
 
       const textTranfrom = (cases) => {
-        
-        let count = 0;
         document.getElementsByTagName("h1")[1].style.textTransform = cases;
         count++;
-
+        if (count == 2) {
+          document.getElementsByTagName("h1")[1].style.textTransform =
+            "lowercase";
+          count = 0;
+        }
       };
 
       const textDecoration = (line) => {
