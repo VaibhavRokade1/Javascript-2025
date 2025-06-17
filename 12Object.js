@@ -30,4 +30,4 @@ myObj.greating = function () {
   console.log(`Hey , ${this.name} What are you Doing.`);
 };
 
-console.log(myObj.greating());
+// console.log(myObj.greating());
