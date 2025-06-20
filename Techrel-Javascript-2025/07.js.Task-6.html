@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0pc;
+        padding: 0px;
+      }
+      .container {
+        gap: 0.5rem;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        background: url("./Images/Background-image.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .box {
+        padding: 22px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px gray;
+        button {
+          font-size: 1rem;
+          background: #7acff7;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 0.5rem;
+      }
+      textarea {
+        width: 95% !important;
+      }
+      .input {
+        padding: 10px;
+        margin-top: 0.5rem;
+        border-style: dotted;
+        outline-style: dotted;
+        outline: #08b1ff;
+        width: 93%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h2 class="heading">Font Modifyer</h2>
+        <textarea id="" class="form-control">Hi i am paragraph</textarea>
+        <select onchange="getstyle(value)" class="form-control">
+          <option selected disabled>-- Select Option --</option>
+          <option value="underline">Underline</option>
+          <option value="fontWeight">Font Weight</option>
+          <option value="fontSize">Font Size</option>
+          <option value="borderRadius">Border Radius</option>
+        </select>
+        <br />
+        <input
+          type="text"
+          class="input"
+          placeholder="Enter value according to propertyName"
+        />
+        <button class="form-control" onclick="setStyle()">Apply Style</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let propertyName;
+    const getstyle = (styletype) => {
+      propertyName = styletype;
+      if (styletype != "underline") {
+        document.getElementsByTagName("input")[0].style.display = "block";
+      } else {
+        document.getElementsByTagName("input")[0].style.display = "none";
+      }
+    };
+
+    const setStyle = () => {
+      let textArea = document.getElementsByTagName("textarea")[0];
+      let inputValue = document.getElementsByTagName("input")[0].value;
+
+      if (propertyName == "underline") {
+        textArea.style.textDecoration = propertyName;
+      } else {
+        textArea.style[propertyName] = inputValue;
+      }
+    };
+  </script>
+</html>

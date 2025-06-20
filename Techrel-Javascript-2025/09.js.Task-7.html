@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    \
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      section {
+        height: 100vh;
+        width: 100%;
+        background-position: fixed;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: 100% 100%;
+      }
+      select {
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <select onchange="getImage(value)">
+        <option disabled selected>-- Select Animals --</option>
+      </select>
+    </section>
+    <script>
+      const animals = [
+        {
+          name: "Lion",
+          url: "https://imgs.search.brave.com/xC35DEoPV4PoYYj6vk3_ACZL1u8hhgg6Yy7XIPKW7qM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjYv/ODA4LzU5OS9zbWFs/bC9hLXN0dW5uaW5n/LXNob3Qtb2YtYS1y/b2FyaW5nLWxpb24t/ZHVyaW5nLXN1bnNl/dC1pbi10aGUtYWZy/aWNhbi1zYXZhbm5h/LWdlbmVyYXRpdmUt/YWktcGhvdG8uanBn",
+        },
+        {
+          name: "Elephant",
+          url: "https://imgs.search.brave.com/FtTO2Il-_7njSVw6XRKErVErLHP9ZEGJR7atUKRQSi0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTI3/OTYzMjY4L3Bob3Rv/L3RocmVhdGVuaW5n/LW1hbGUtZWxlcGhh/bnQuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPWMzSHZjRmZD/WEpEXzFic2JqV2Vi/SUJWTUNJb1E3MExP/UllRaGlDc2pRaVE9",
+        },
+        {
+          name: "Tiger",
+          url: "https://imgs.search.brave.com/AlAJHgqAZfGPDhGvXVCm2Pft8a47LZ4LOAjyx5sgjks/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjMv/NTk1LzE0Ni9zbWFs/bC9wb3J0cmFpdC1v/Zi1hLXRpZ2VyLW9u/LWEtbmF0dXJlLWJh/Y2tncm91bmQtY2xv/c2UtdXAtYW5pbWFs/LWluLW5hdHVyZS13/aWxkbGlmZS1zY2Vu/ZS1nZW5lcmF0aXZl/LWFpLXBob3RvLmpw/Zw",
+        },
+        {
+          name: "Dolphin",
+          url: "https://imgs.search.brave.com/1LDgIQEREF9wVWt2JF_iM9R0QXPNwPCb6dxmg1_uLwg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8x/MC8xNC8wOC81NC9k/b2xwaGluLTE3Mzk2/NzRfNjQwLmpwZw",
+        },
+      ];
+
+      let select = document.getElementsByTagName("select")[0];
+      let section = document.getElementsByTagName("section")[0];
+      for (let i = 0; i < animals.length; i++) {
+        select.innerHTML += `<option value="${animals[i].url}">${animals[i].name}</option>`;
+      }
+
+      const getImage = (url) => {
+        // console.log(url);
+
+        section.style.backgroundImage = `url(${url})`;
+      };
+    </script>
+  </body>
+</html>

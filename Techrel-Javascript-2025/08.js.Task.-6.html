@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1 Javascript</title>
+  </head>
+  <body>
+    <!-- Optional static user here -->
+  </body>
+  <script>
+    const persons = [
+      {
+        name: "Vaibhav Rokade",
+        aadharCard: "8888-9999-5555",
+        age: 22,
+        contact: ["1234567890", "9876543210"],
+        hobbies: ["playing", "Watching"],
+      },
+      {
+        name: "Vaibhav Rokade",
+        aadharCard: "8888-9999-5555",
+        age: 22,
+        contact: ["1234567890", "9876543210"],
+        hobbies: ["playing", "Watching"],
+      },
+      {
+        name: "Aditya Patil",
+        aadharCard: "1111-2222-3333",
+        age: 23,
+        contact: ["9345612780"],
+        hobbies: ["Coding", "Reading"],
+      },
+      {
+        name: "Sneha Kaur",
+        aadharCard: "4444-5555-6666",
+        age: 21,
+        contact: ["9900990099", "8080808080"],
+        hobbies: ["Painting", "Dancing"],
+      },
+      {
+        name: "Rohan Sharma",
+        aadharCard: "7777-8888-9999",
+        age: 24,
+        contact: ["9123456780"],
+        hobbies: ["Football", "Gaming"],
+      },
+      {
+        name: "Pooja Nair",
+        aadharCard: "1234-5678-9101",
+        age: 22,
+        contact: ["9988776655", "7766554433"],
+        hobbies: ["Singing", "Sketching"],
+      },
+      {
+        name: "Amit Joshi",
+        aadharCard: "4321-8765-1011",
+        age: 25,
+        contact: ["9871234560"],
+        hobbies: ["Travelling", "Photography"],
+      },
+      {
+        name: "Neha Gupta",
+        aadharCard: "1478-3692-2587",
+        age: 20,
+        contact: ["9090901234", "8080805678"],
+        hobbies: ["Blogging", "Watching Movies"],
+      },
+      {
+        name: "Raj Verma",
+        aadharCard: "3692-1478-8520",
+        age: 26,
+        contact: ["8765432109"],
+        hobbies: ["Cricket", "Writing"],
+      },
+      {
+        name: "Kiran More",
+        aadharCard: "2580-3690-1470",
+        age: 23,
+        contact: ["7894561230", "6543219870"],
+        hobbies: ["Gym", "Running"],
+      },
+      {
+        name: "Divya Rane",
+        aadharCard: "7410-8520-9630",
+        age: 21,
+        contact: ["9090908080"],
+        hobbies: ["Drawing", "Cooking"],
+      },
+    ];
+
+    for (let i = 0; i < persons.length; i++) {
+      document.body.innerHTML += `
+      <fieldset>
+        <legend>User Data</legend>
+        <ul>
+          <li>Name : ${persons[i].name}</li>
+          <li>Aadhar Card : ${persons[i].aadharCard}</li>
+          <li>Age : ${persons[i].age}</li>
+          <li>
+            Contact :
+            <ol>
+              ${persons[i].contact.map((num) => `<li>+91 ${num}</li>`).join("")}
+            </ol>
+          </li>
+          <li>
+            Hobbies :
+            <ol type="I">
+              ${persons[i].hobbies.map((hobby) => `<li>${hobby}</li>`).join("")}
+            </ol>
+          </li>
+        </ul>
+      </fieldset>`;
+    }
+  </script>
+</html>
