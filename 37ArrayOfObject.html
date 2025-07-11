@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="" alt="" />
+
+    <h1>Name :</h1>
+    <h1>Year :</h1>
+    <script>
+      const users = {
+        name: "Vaibhav Rokade",
+        eamil: "rokade04@gmail.com",
+        password: "Vaibhav@145",
+        phone: 7387539006,
+        tel: "3443-3453-6677",
+        city: "Pune",
+        pinCode: 414502,
+
+        hobbies: ["playing criket", "Singing"],
+        achivements: [
+          {
+            achivementName: "Football",
+            year: 1988,
+            roll: "team Captan",
+            rank: "2nd",
+          },
+          {
+            achivementName: "Criket",
+            year: 1988,
+            roll: "team Captan",
+            rank: "1st",
+          },
+        ],
+        dob: "MQURP403M",
+        adhar: 798153494311,
+        images: [
+          "https://imgs.search.brave.com/PbP-i7JPm_l0xMY7yTPH43SEO8LHXnfD_iiiRfaxNWE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9ncmF2/YXRhci5jb20vaW1h/Z2VzL2hvbWVwYWdl/L2F2YXRhci0wMS5w/bmc",
+          "image2.jpg",
+        ],
+        jobDes: {
+          role: "Fullsatck Developer",
+          packege: 120000,
+          workEmail: "rokadevaibhav04@gmail.com",
+          workAddress: "At post : Deotakli",
+        },
+      };
+
+      // console.log(users);
+
+      document.getElementsByTagName("img")[0].src = users.images[0];
+
+      document.getElementsByTagName("h1")[0].innerText +=
+        users.achivements[0].achivementName;
+      document.getElementsByTagName("h1")[1].innerText +=
+        users.achivements[0].year;
+    </script>
+  </body>
+</html>

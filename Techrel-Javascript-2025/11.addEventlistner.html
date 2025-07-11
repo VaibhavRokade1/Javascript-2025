@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 10px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      .dropdown {
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="selectCategory" class="dropdown">
+      <option selected disabled>--Select Category--</option>
+    </select>
+
+    <select id="selectAnimals" class="dropdown">
+      <option selected disabled>--Select Animals--</option>
+    </select>
+
+    <img src="" alt="..." height="110px" width="110px" />
+  </body>
+  <script>
+    let category = document.querySelector("#selectCategory");
+    let animals = document.querySelector("#selectAnimals");
+
+    const allAnimals = [
+      {
+        category: "mammals",
+        mammals: [
+          {
+            name: "Lion",
+            url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
+          },
+          {
+            name: "Elephant",
+            url: "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
+          },
+          {
+            name: "Tiger",
+            url: "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
+          },
+          {
+            name: "Kangaroo",
+            url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kangaroo_Australia_01.jpg",
+          },
+          {
+            name: "Panda",
+            url: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG",
+          },
+        ],
+      },
+      {
+        category: "birds",
+        birds: [
+          {
+            name: "Parrot",
+            url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Rainbow_Lorikeet.jpg",
+          },
+          {
+            name: "Peacock",
+            url: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Peacock_Plumage.jpg",
+          },
+          {
+            name: "Eagle",
+            url: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Bald_Eagle_Portrait.jpg",
+          },
+          {
+            name: "Owl",
+            url: "https://upload.wikimedia.org/wikipedia/commons/1/19/Barn_Owl_Tyto_alba.jpg",
+          },
+          {
+            name: "Penguin",
+            url: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Aptenodytes_forsteri_-Snow_Hill_Island%2C_Antarctica_-adults-8.jpg",
+          },
+        ],
+      },
+      {
+        category: "reptiles",
+        reptiles: [
+          {
+            name: "Crocodile",
+            url: "https://upload.wikimedia.org/wikipedia/commons/e/e2/NileCrocodile.jpg",
+          },
+          {
+            name: "Snake",
+            url: "https://upload.wikimedia.org/wikipedia/commons/5/56/Brown_Tree_Snake_Boiga_irregularis.jpg",
+          },
+          {
+            name: "Lizard",
+            url: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Eastern_Fence_Lizard.jpg",
+          },
+          {
+            name: "Chameleon",
+            url: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Chamaeleo_calyptratus_01_by_Line1.jpg",
+          },
+          {
+            name: "Turtle",
+            url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Turtle_diving2.jpg",
+          },
+        ],
+      },
+    ];
+
+    for (let i = 0; i < allAnimals.length; i++) {
+      category.innerHTML += `<option value="${allAnimals[i].category}">${allAnimals[i].category}</option>`;
+    }
+
+    category.addEventListener("change", (e) => {
+      setAnimalsList(e.target.value);
+    });
+
+    animals.addEventListener("change", (e) => {
+      document.getElementsByTagName("img")[0].src = e.target.value;
+    });
+'p12'
+    const setAnimalsList = (category) => {
+      if (category === "mammals") {
+        animals.innerHTML =
+          "<option selected disabled>--Select Animals--</option>";
+        for (let i = 0; i < allAnimals[0].mammals.length; i++) {
+          animals.innerHTML += `<option value="${allAnimals[0].mammals[i].url}">${allAnimals[0].mammals[i].name}</option>`;
+        }
+      } else if (category === "birds") {
+        animals.innerHTML =
+          "<option selected disabled>--Select Animals--</option>";
+        for (let i = 0; i < allAnimals[1].birds.length; i++) {
+          animals.innerHTML += `<option value="${allAnimals[1].birds[i].url}">${allAnimals[1].birds[i].name}</option>`;
+        }
+      } else if (category === "reptiles") {
+        animals.innerHTML =
+          "<option selected disabled>--Select Animals--</option>";
+        for (let i = 0; i < allAnimals[2].reptiles.length; i++) {
+          animals.innerHTML += `<option value="${allAnimals[2].reptiles[i].url}">${allAnimals[2].reptiles[i].name}</option>`;
+        }
+      }
+    };
+  </script>
+</html>

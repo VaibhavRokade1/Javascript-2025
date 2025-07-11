@@ -3,13 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Fixed Digital Watch</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle, #000 0%, #020a0f 100%);
+        font-family: "Orbitron", monospace;
+      }
+
+      .watch {
+        background: #0c0f1a;
+        border-radius: 20px;
+        padding: 50px 100px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+          0 0 30px rgba(0, 255, 255, 0.15),
+          inset 0 0 20px rgba(0, 255, 255, 0.1);
+        position: relative;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        color: #00ffff;
+        text-shadow: 0 0 5px #00f0ff, 0 0 15px #00f0ff,
+          0 0 30px rgba(0, 255, 255, 0.3);
+        margin: 0;
+        white-space: nowrap;
+        width: 18ch; /* Set fixed width for 8:88:88 PM format */
+        text-align: center;
+        letter-spacing: 0.15ch;
+      }
+
+      .watch::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.05),
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .watch::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        background: repeating-linear-gradient(
+          to bottom,
+          rgba(0, 255, 255, 0.02),
+          rgba(0, 255, 255, 0.02) 2px,
+          transparent 2px,
+          transparent 4px
+        );
+        z-index: 1;
+        pointer-events: none;
+        animation: scanlines 8s linear infinite;
+      }
+
+      @keyframes scanlines {
+        0% {
+          background-position-y: 0;
+        }
+        100% {
+          background-position-y: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Vaibhav1</h1>
-    <h2>Vaibhav2</h2>
-    <h3>Vaibhav3</h3>
-    <h4>Vaibhav4</h4>
-    <h5>Vaibhav5</h5>
+    <div class="watch">
+      <h1 id="clock">--:--:--</h1>
+    </div>
+
+    <script>
+      const clock = document.getElementById("clock");
+
+      function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString("en-US", { hour12: true });
+        clock.innerText = timeString;
+      }
+
+      updateClock(); // Initial call
+      setInterval(updateClock, 1000);
+    </script>
   </body>
 </html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        /* height: 100vh; */
+        /* flex-direction: column; */
+        justify-content: center;
+        display: flex;
+        /* background: rgb(240, 240, 240); */
+      }
+      .userBox {
+        padding: 1rem;
+      }
+      .userBox div {
+        text-align: center;
+        box-shadow: inset 0px 0px 7px gray, 0px 0px 10px rgb(177, 176, 176);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: #fff;
+        img {
+          border: 5px solid rgb(215, 88, 215);
+          border-style: double;
+        }
+      }
+      .detailsBox ul {
+        margin-top: 1rem;
+        list-style-type: none;
+      }
+      .detailsBox ul li {
+        box-shadow: inset 0px 0px 7px gray, 0px 0px 5px rgb(177, 176, 176);
+        margin-top: 1.3rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 50vw;
+
+        background: #fff;
+      }
+      .secound-main {
+        display: flex;
+        padding: 0px 190px;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .hobbies {
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: inset 0px 0px 7px gray, 0px 0px 5px rgb(177, 176, 176);
+      }
+      .achivements {
+        padding: 0.5rem;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: inset 0px 0px 7px gray, 0px 0px 5px rgb(177, 176, 176);
+      }
+      .hobbies ul {
+        padding-left: 2rem;
+      }
+      .achivements ol {
+        padding-left: 2rem;
+      }
+      .btn {
+        background: #f866f8;
+        padding: 0.5rem;
+        border-radius: 8px;
+        color: #fff;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="userBox">
+        <div>
+          <img
+            src="https://avatars.githubusercontent.com/u/139482665?v=4"
+            alt="Profile image"
+            height="200px"
+            width="200px"
+            style="border-radius: 50%"
+          />
+          <h2>Vaibhav Rokade</h2>
+          <p>Fullsatck Developer</p>
+          <p>Techrel Institute</p>
+          <button class="btn" onclick="showData()">Show data</button>
+          <button class="btn">Next >></button>
+        </div>
+      </div>
+      <div class="detailsBox">
+        <div>
+          <ul>
+            <li><strong>Name :</strong>&nbsp;</li>
+            <li><strong>Eamil :</strong>&nbsp;</li>
+            <li><strong>Phone :</strong>&nbsp;</li>
+            <li><strong>Adhar :</strong>&nbsp;</li>
+            <li>
+              <strong>Address:</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="secound-main">
+      <div class="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Playing</li>
+        </ul>
+      </div>
+      <div class="achivements">
+        <h2>Achivements</h2>
+        <ol>
+          <li>
+            Name : Football <br />
+            Rank : 2nd <br />
+            Year : 1999 <br />
+            Roll : team Member
+            <br />
+            <br />
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+  <script src="./userObject.js"></script>
+</html>
