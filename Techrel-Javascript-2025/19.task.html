@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter Url" />
+    <input type="text" placeholder="Enter width" />
+    <input type="text" placeholder="Enter height" />
+    <input type="text" placeholder="Enter radius" />
+    <button onclick="showImage()">Show Image</button>
+    <img src="" alt="" />
+
+    <script>
+      const showImage = () => {
+        let inputs = document.querySelectorAll("input");
+        const img = document.querySelector("img");
+
+        img.src = inputs[0].value;
+        img.width = inputs[1].value;
+        img.height = inputs[2].value;
+        img.style.borderRadius = inputs[3].value;
+      };
+    </script>
+  </body>
+</html>

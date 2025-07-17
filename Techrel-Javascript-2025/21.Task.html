@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea cols="30">
+Hello Javascript
+    </textarea>
+    <br />
+    <button onclick="alls(innerText)">lowercase</button>
+    <button onclick="alls(innerText)">uppercase</button>
+    <button onclick="alls(innerText)">capitalize</button>
+
+    <script>
+      const alls = (value) => {
+        document.querySelector("textarea").style.textTransform = value;
+      };
+    </script>
+  </body>
+</html>
