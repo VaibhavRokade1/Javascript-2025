@@ -1,284 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
 
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-        font-family: "Segoe UI", sans-serif;
-      }
-      .container {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 30px;
-        padding: 20%;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-      .left {
-        width: 50%;
-        border: 1px solid black;
-        padding: 20px;
-        border-radius: 10px;
-        /* background: #646464;
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 30px;
+      padding: 20%;
+    }
+
+    .left {
+      width: 50%;
+      border: 1px solid black;
+      padding: 20px;
+      border-radius: 10px;
+      /* background: #646464;
         color: #fff; */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-      .p-3 {
-        padding: 5px;
-        border-radius: 0.5rem;
-        outline: none;
-        border: 1px solid gray;
-      }
-      .btn {
-        cursor: pointer;
-        background: #14aeac;
-        color: aliceblue;
-      }
+    .p-3 {
+      padding: 5px;
+      border-radius: 0.5rem;
+      outline: none;
+      border: 1px solid gray;
+    }
 
-      .right {
-        position: relative;
-        border: 1px solid black;
-        border-radius: 20px;
-        width: 45%;
-      }
-      .banner-img {
-        width: 100%;
-        /* margin-bottom: 20px; */
-        border-radius: 20px;
-        height: 100px;
-        background: skyblue;
-      }
-      .card-body {
-        position: relative;
-        top: 0px;
-        padding: 20px;
-      }
-      .userImg {
-        height: 100px;
-        position: absolute;
-        top: 30px;
-        left: 35%;
+    .btn {
+      cursor: pointer;
+      background: #14aeac;
+      color: aliceblue;
+    }
 
-        border: 5px solid rgb(255, 255, 255);
-        width: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+    .right {
+      position: relative;
+      border: 1px solid black;
+      border-radius: 20px;
+      width: 45%;
+    }
 
-      .card {
-        background-color: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    .banner-img {
+      width: 100%;
+      /* margin-bottom: 20px; */
+      border-radius: 20px;
+      height: 100px;
+      background: skyblue;
+    }
 
-        text-align: center;
-        position: relative;
-      }
+    .card-body {
+      position: relative;
+      top: 0px;
+      padding: 20px;
+    }
 
-      .banner-img {
-        width: 100%;
-        height: 120px;
-        background: #14aeac;
-        border-radius: 20px 20px 0 0;
-      }
+    .userImg {
+      height: 100px;
+      position: absolute;
+      top: 30px;
+      left: 35%;
 
-      .userImg {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid #fff;
-        position: absolute;
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: white;
-      }
+      border: 5px solid rgb(255, 255, 255);
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-      .card-body {
-        padding-top: 50px;
-        padding-bottom: 20px;
-      }
+    .card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 
-      .card-body h1 {
-        font-size: 1.5rem;
-        margin-bottom: 5px;
-        color: #333;
-      }
+      text-align: center;
+      position: relative;
+    }
 
-      .card-body h4 {
-        font-size: 1rem;
-        color: #777;
-        /* margin-bottom: 20px; */
-      }
+    .banner-img {
+      width: 100%;
+      height: 120px;
+      background: #14aeac;
+      border-radius: 20px 20px 0 0;
+    }
 
-      .btns {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
+    .userImg {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+    }
 
-      .btns button {
-        padding: 8px 16px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: bold;
-        background-color: #14aeac;
-        color: white;
-        transition: all 0.3s ease;
-      }
+    .card-body {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
 
-      .btns button:hover {
-        background-color: #14aeac;
-      }
+    .card-body h1 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      color: #333;
+    }
 
-      .icons {
-        width: 100%;
-        color: #14aeac;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
+    .card-body h4 {
+      font-size: 1rem;
+      color: #777;
+      /* margin-bottom: 20px; */
+    }
 
-        gap: 2rem;
-      }
-      .icons i {
-        font-size: 1.5rem;
-        color: #14aeac;
-        text-decoration: none;
-      }
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
 
-      .mediastatus {
-        width: 100%;
-        color: skyblue;
-        display: flex;
-        margin-top: 20px;
-        justify-content: center;
-        padding: 10px;
+    .btns button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #14aeac;
+      color: white;
+      transition: all 0.3s ease;
+    }
 
-        gap: 4rem;
-      }
-      .mediastatus i {
-        font-size: 1rem;
-        color: gray;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="left">
-        <h1>From</h1>
-        <input type="text" class="p-3" placeholder="Enter Profile URL" />
-        <input type="text" class="p-3" placeholder="Enter a Name" />
-        <input type="text" class="p-3" placeholder="Enter a Role" />
-        <strong>Social Media :</strong>
-        <input type="text" class="p-3" placeholder="Enter a instagram link" />
-        <input type="text" class="p-3" placeholder="Enter a Facebook link" />
-        <input type="text" class="p-3" placeholder="Enter a whatsapp link" />
-        <input type="text" class="p-3" placeholder="Enter a Telegram link" />
-        <strong>Social Media Status :</strong>
-        <input type="text" class="p-3" placeholder="Enter a Total Like" />
-        <input type="text" class="p-3" placeholder="Enter a Total Subscriber" />
-        <input type="text" class="p-3" placeholder="Enter a Total Shaee" />
-        <!-- submit btn -->
+    .btns button:hover {
+      background-color: #14aeac;
+    }
 
-        <button class="p-3 btn" onclick="handleForm()">Submit</button>
-      </div>
-      <div class="right">
-        <div class="card">
-          <div class="banner-img"></div>
-          <div class="">
-            <img
-              class="userImg"
-              src="https://imgs.search.brave.com/oB7Ak67etRi_Ly1NApIiKr4VjhVC2ZehmrdxW0JsKo0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/MTE2NDU0OC92ZWN0/b3IvYXZhdGFyLTUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUNLNDlTaExKd0R4/RTRraXJvQ1I0Mmtp/bVR1dWh2dW8yRkg1/eV82YVNnRW89"
-              alt="..."
-            />
+    .icons {
+      width: 100%;
+      color: #14aeac;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+
+      gap: 2rem;
+    }
+
+    .icons i {
+      font-size: 1.5rem;
+      color: #14aeac;
+      text-decoration: none;
+    }
+
+    .mediastatus {
+      width: 100%;
+      color: skyblue;
+      display: flex;
+      margin-top: 20px;
+      justify-content: center;
+      padding: 10px;
+
+      gap: 4rem;
+    }
+
+    .mediastatus i {
+      font-size: 1rem;
+      color: gray;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>From</h1>
+      <input type="text" class="p-3" placeholder="Enter Profile URL" />
+      <input type="text" class="p-3" placeholder="Enter a Name" />
+      <input type="text" class="p-3" placeholder="Enter a Role" />
+      <strong>Social Media :</strong>
+      <input type="text" class="p-3" placeholder="Enter a instagram link" />
+      <input type="text" class="p-3" placeholder="Enter a Facebook link" />
+      <input type="text" class="p-3" placeholder="Enter a whatsapp link" />
+      <input type="text" class="p-3" placeholder="Enter a Telegram link" />
+      <strong>Social Media Status :</strong>
+      <input type="text" class="p-3" placeholder="Enter a Total Like" />
+      <input type="text" class="p-3" placeholder="Enter a Total Subscriber" />
+      <input type="text" class="p-3" placeholder="Enter a Total Shaee" />
+      <!-- submit btn -->
+
+      <button class="p-3 btn" id="submit-Btn">Submit</button>
+    </div>
+    <div class="right">
+      <div class="card">
+        <div class="banner-img"></div>
+        <div class="">
+          <img class="userImg"
+            src="https://imgs.search.brave.com/oB7Ak67etRi_Ly1NApIiKr4VjhVC2ZehmrdxW0JsKo0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTEz/MTE2NDU0OC92ZWN0/b3IvYXZhdGFyLTUu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUNLNDlTaExKd0R4/RTRraXJvQ1I0Mmtp/bVR1dWh2dW8yRkg1/eV82YVNnRW89"
+            alt="..." />
+        </div>
+        <div class="card-body">
+          <h1 id="cardName">Unknown</h1>
+          <h4 id="role">-</h4>
+          <div class="icons">
+            <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="" target="_blank"> <i class="bi bi-facebook"></i></a>
+            <a href="" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a href="" target="_blank"><i class="bi bi-telegram"></i></a>
           </div>
-          <div class="card-body">
-            <h1 id="cardName">Unknown</h1>
-            <h4 id="role">-</h4>
-            <div class="icons">
-              <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-              <a href="" target="_blank"> <i class="bi bi-facebook"></i></a>
-              <a href="" target="_blank"><i class="bi bi-whatsapp"></i></a>
-              <a href="" target="_blank"><i class="bi bi-telegram"></i></a>
+          <div class="btns">
+            <button>View Profile</button>
+            <button>Subscribe</button>
+          </div>
+          <div class="mediastatus">
+            <div>
+              <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;<span>0</span>
             </div>
-            <div class="btns">
-              <button>View Profile</button>
-              <button>Subscribe</button>
-            </div>
-            <div class="mediastatus">
-              <div>
-                <i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;<span>0</span>
-              </div>
-              <div><i class="bi bi-people-fill"></i>&nbsp;<span>0</span></div>
-              <div><i class="bi bi-share-fill"></i>&nbsp;<span>0</span></div>
-            </div>
+            <div><i class="bi bi-people-fill"></i>&nbsp;<span>0</span></div>
+            <div><i class="bi bi-share-fill"></i>&nbsp;<span>0</span></div>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      const handleForm = () => {
-        // ------------- form data ----------------
-        // Profile url
-        const formUrl = document.querySelectorAll("input")[0].value;
-        // Name
-        const formName = document.querySelectorAll("input")[1].value;
-        // job role
-        const formRole = document.querySelectorAll("input")[2].value;
+  </div>
+  <script>
 
-        // social media icon
-        const fromInsta = document.querySelectorAll("input")[3].value;
-        const fromFace = document.querySelectorAll("input")[4].value;
-        const fromWhats = document.querySelectorAll("input")[5].value;
-        const fromTele = document.querySelectorAll("input")[6].value;
+    document.getElementById('submit-Btn').addEventListener('click', () => {
+      handleForm();
+    })
 
-        // media status
-        const fromlike = document.querySelectorAll("input")[7].value;
-        const fromfollow = document.querySelectorAll("input")[8].value;
-        const fromShare = document.querySelectorAll("input")[9].value;
+    const handleForm = () => {
+      // ------------- form data ----------------
+      // Profile url
+      const formUrl = document.querySelectorAll("input")[0].value;
+      // Name
+      const formName = document.querySelectorAll("input")[1].value;
+      // job role
+      const formRole = document.querySelectorAll("input")[2].value;
 
-        // ------------- card data ----------------
-        let cardImg = document.querySelector("img");
-        let cardName = document.querySelector("#cardName");
-        let cardRole = document.querySelector("#role");
+      // social media icon
+      const fromInsta = document.querySelectorAll("input")[3].value;
+      const fromFace = document.querySelectorAll("input")[4].value;
+      const fromWhats = document.querySelectorAll("input")[5].value;
+      const fromTele = document.querySelectorAll("input")[6].value;
 
-        let cardMedia = document.querySelectorAll("a");
+      // media status
+      const fromlike = document.querySelectorAll("input")[7].value;
+      const fromfollow = document.querySelectorAll("input")[8].value;
+      const fromShare = document.querySelectorAll("input")[9].value;
 
-        let cardStatus = document.querySelectorAll("span");
+      // ------------- card data ----------------
+      let cardImg = document.querySelector("img");
+      let cardName = document.querySelector("#cardName");
+      let cardRole = document.querySelector("#role");
 
-        // --------- setData --------------
+      let cardMedia = document.querySelectorAll("a");
 
-        cardImg.src = formUrl;
-        cardName.innerText = formName;
-        cardRole.innerText = formRole;
+      let cardStatus = document.querySelectorAll("span");
 
-        cardMedia[0].href = fromInsta;
-        cardMedia[1].href = fromFace;
-        cardMedia[2].href = fromWhats;
-        cardMedia[3].href = fromTele;
+      // --------- setData --------------
 
-        cardStatus[0].innerText = fromlike;
-        cardStatus[1].innerText = fromfollow;
-        cardStatus[2].innerText = fromShare;
-      };
-    </script>
-  </body>
+      cardImg.src = formUrl;
+      cardName.innerText = formName;
+      cardRole.innerText = formRole;
+
+      cardMedia[0].href = fromInsta;
+      cardMedia[1].href = fromFace;
+      cardMedia[2].href = fromWhats;
+      cardMedia[3].href = fromTele;
+
+      cardStatus[0].innerText = fromlike;
+      cardStatus[1].innerText = fromfollow;
+      cardStatus[2].innerText = fromShare;
+    };
+  </script>
+</body>
+
 </html>
