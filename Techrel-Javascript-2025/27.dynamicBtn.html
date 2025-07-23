@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    section {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <section>
+        <div class="box">
+            <!-- <button class="btn">Red</button> -->
+        </div>
+    </section>
+
+    <script>
+        let btns = ["red", "yellow", "green", "white"];
+        let box = document.querySelector('.box');
+
+        for (let i = 0; i < btns.length; i++) {
+            box.innerHTML += ` <button class="btn" onclick="setBgColor('${btns[i]}')">${btns[i]}</button>`;
+        }
+
+        const setBgColor = (color) => {
+            document.querySelector('body').style.backgroundColor = color;
+        }
+
+
+    </script>
+</body>
+
+</html>
