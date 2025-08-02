@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello World</h1>
+
+    <select onchange="setColor(value)">
+        <option value="">--select--</option>
+        <option value="text">to Text</option>
+        <option value="background">to Background</option>
+    </select>
+
+    <button>red</button>
+    <button>yellow</button>
+    <button>pink</button>
+
+    <script>
+        let allbtns = document.querySelectorAll("button");
+
+        const setColor = (value) => {
+            allbtns.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+
+                    if (value === "text") {
+                        document.querySelector("h1").style.color = e.target.innerText;
+                    }
+                    else if (value === "background") {
+                        document.querySelector("h1").style.backgroundColor = e.target.innerText;
+                    }
+
+                })
+            });
+        }
+    </script>
+
+</body>
+
+</html>
