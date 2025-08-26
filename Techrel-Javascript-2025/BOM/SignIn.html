@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in Page</title>
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+
+      .login-container {
+        background: #ffffff;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .login-container:hover {
+        transform: scale(1.02);
+      }
+
+      .login-container h2 {
+        margin-bottom: 25px;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .input-group input:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+        outline: none;
+      }
+
+      .btn-login {
+        width: 100%;
+        padding: 12px;
+        background: #2575fc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-login:hover {
+        background: #6a11cb;
+      }
+
+      .footer {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #777;
+      }
+
+      .footer a {
+        color: #2575fc;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="button" onclick="HandleLogin()" class="btn-login">
+          Login
+        </button>
+      </form>
+      <div class="footer">Don't have an account? <a href="#">Sign Up</a></div>
+    </div>
+
+    <script>
+      const HandleLogin = () => {
+        let Iemail = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (!email && !password) {
+          alert("All Fields Requierds....");
+        } else {
+          let userData = JSON.parse(localStorage.getItem("user"));
+
+          if (Iemail == userData.email && password == userData.phone) {
+            window.alert("Login Successfully...");
+            window.open("./Profile.html", "_Self");
+          } else {
+            alert("Invalid Username or Password...!!!");
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

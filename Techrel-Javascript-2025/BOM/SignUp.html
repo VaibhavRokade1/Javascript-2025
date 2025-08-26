@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+
+      .container {
+        background: #fff;
+        padding: 35px 25px;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      .input-group {
+        margin-bottom: 18px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .input-group label {
+        margin-bottom: 5px;
+        color: #555;
+        font-weight: 600;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      .input-group input:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #2575fc;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #6a11cb;
+      }
+
+      .link {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .link a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      @media (max-height: 600px) {
+        .container {
+          padding: 25px 20px;
+        }
+        .input-group input {
+          padding: 10px;
+        }
+        .btn {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="input-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="phone">Phone ( Password ) </label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter your phone ( Password )"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="role">Role</label>
+          <input type="text" id="role" placeholder="Enter your role" required />
+        </div>
+
+        <div class="input-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            placeholder="Enter your address"
+            required
+          />
+        </div>
+
+        <button onclick="handleSubmit()" type="button" class="btn">
+          Register
+        </button>
+      </form>
+    </div>
+
+    <script>
+      const handleSubmit = () => {
+        let fname = document.getElementById("fullname").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let role = document.getElementById("role").value;
+        let address = document.getElementById("address").value;
+
+        if (!name && !email && !phone && !role && !address) {
+          window.alert("All Fields are Requierd....");
+        } else {
+          let userData = {
+            fname,
+            email,
+            phone,
+            role,
+            address,
+          };
+
+          localStorage.setItem("user", JSON.stringify(userData));
+          window.open("./SignIn.html", "_Self");
+        }
+      };
+    </script>
+  </body>
+</html>
