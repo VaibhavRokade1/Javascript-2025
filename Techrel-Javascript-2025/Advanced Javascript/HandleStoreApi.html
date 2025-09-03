@@ -3,7 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Handle Store API</title>
+    <!-- bootstrap icons cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .top-nav nav {
+        background-color: #8d28cf;
+        color: white;
+        /* padding: 10px 0; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-nav nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .top-nav nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      .top-nav nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .top-nav nav ul li a:hover {
+        text-decoration: underline;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+      .profile {
+        margin-left: auto;
+        padding: 10px;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 00px 10px;
+      }
+      .main-content {
+        text-align: center;
+      }
+      .left-side-bar {
+        width: 200px;
+        padding: 10px;
+        height: 80vh;
+        background-color: rgb(173, 78, 213);
+        border-right: 1px solid #ddd;
+      }
+
+      .main-content {
+        display: flex;
+      }
+      .left-side-bar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .left-side-bar ul li {
+        margin-bottom: 10px;
+        padding: 10px 10px;
+        background: #fff;
+        border-radius: 10px;
+        align-items: start;
+        text-align: start;
+        a {
+          color: black;
+          padding: 20px 10px;
+          text-decoration: none;
+        }
+      }
+      .left-side-bar ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .right-side-content {
+        /* padding: 10px; */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #dcdcdc;
+      }
+      .product-card {
+        background: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        text-align: start;
+        text-align: center;
+        width: 200px;
+      }
+      .AllCard {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        /* background: #000; */
+        height: 400px;
+        overflow: auto;
+      }
+      .product-card {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .product-card img {
+        max-width: 80%;
+        height: 140px;
+        border-radius: 10px;
+      }
+      .product-card h4,
+      .product-card p {
+        margin: 5px 0;
+      }
+      button {
+        padding: 10px 15px;
+        margin: 10px;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body>
+    <div class="top-nav">
+      <nav>
+        <h1 class="logo">MyStore</h1>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Product</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="left-side-bar">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#electronics">Electronics</a></li>
+          <li><a href="#clothing">Clothing</a></li>
+          <li><a href="#home">Home & Kitchen</a></li>
+          <li><a href="#books">Books</a></li>
+        </ul>
+      </div>
+      <div class="right-side-content">
+        <h2>Featured Products</h2>
+        <div class="AllCard"></div>
+      </div>
+    </div>
+
+    <script>
+      fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          let AllCard = document.querySelector(".AllCard");
+          data.forEach((product) => {
+            AllCard.innerHTML += `<div class="product-card">
+            <img
+              src="${product.image}"
+              alt="${product.title}"
+              height="150px"
+            />
+            <h4 style="text-align: start; text-justify: newspaper">
+              ${product.title}
+            </h4>
+            <h4 style="padding: 0px; display: block; text-align: center;">$${product.price}</h4>
+           
+
+            <button style="margin-top: 10px">Add to Cart</button>
+          </div>
+                `;
+          });
+        });
+    </script>
+  </body>
 </html>
