@@ -1,10 +1,10 @@
 // reduce method in javascript
-const myNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const myNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // let total = myNum.reduce((accumelater, currectValue) => {
 //   console.log(`acc : ${accumelater} current : ${currectValue}`);
 //   return accumelater + currectValue;
-// }, 0);
+// });
 
 // let total = myNum.reduce((acc, curr) => {
 //   return acc + curr;

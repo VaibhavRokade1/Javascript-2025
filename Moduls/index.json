@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Aarav", "age": 18, "grade": "A" },
+  { "id": 2, "name": "Ishita", "age": 19, "grade": "B" },
+  { "id": 3, "name": "Vihaan", "age": 17, "grade": "A" },
+  { "id": 4, "name": "Saanvi", "age": 18, "grade": "C" },
+  { "id": 5, "name": "Aditya", "age": 20, "grade": "B" },
+  { "id": 6, "name": "Ananya", "age": 19, "grade": "A" },
+  { "id": 7, "name": "Kabir", "age": 18, "grade": "B" },
+  { "id": 8, "name": "Riya", "age": 17, "grade": "C" },
+  { "id": 9, "name": "Arjun", "age": 20, "grade": "A" },
+  { "id": 10, "name": "Meera", "age": 18, "grade": "B" }
+]
